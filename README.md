@@ -35,3 +35,14 @@
 文选第五册 智慧的殿堂：跨学科专题研讨
 
 [文言词汇表](./现行人教社教材文言单词.第三次修改.xlsx)
+
+## 联系方式
+邮箱：1458643298@qq.com
+
+QQ群：754493332
+
+问卷星：https://www.wjx.cn/vm/YDCeADA.aspx#
+
+爱发电：https://afdian.com/a/OuyangLeon
+
+微信公众号：新概念汉语言丛书
