@@ -2,17 +2,377 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>新概念汉语言丛书</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="新概念汉语言丛书 - 探索K12语文的系统性改革，构建克服当前教材问题的语文知识体系。">
+    <title>新概念汉语言丛书 | K12语文改革探索</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f5f9;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.55;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .content {
+            padding: 2rem 2rem 2.8rem;
+        }
+
+        /* 排版 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #1e3c4c 0%, #2b5c6f 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.4rem;
+            border-left: 5px solid #2b7a62;
+            padding-left: 1.2rem;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #4a627a;
+            margin-bottom: 2rem;
+            padding-left: 1.7rem;
+            border-bottom: 1px solid #e2edf2;
+            padding-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 1.8rem 0 1rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 3px solid #cbdde6;
+            display: inline-block;
+            color: #1f4e5c;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.6rem 0 1rem 0;
+            color: #2c6a5e;
+            padding-left: 0.5rem;
+            border-left: 4px solid #6fbf9f;
+        }
+
+        /* 引用/观点区块 */
+        .insight-block {
+            background: #f9fbfd;
+            border-left: 4px solid #6c9ebf;
+            padding: 0.9rem 1.3rem;
+            margin: 1.2rem 0;
+            border-radius: 12px;
+            transition: background 0.2s;
+            color: #1f3b46;
+        }
+
+        .insight-block p {
+            margin: 0;
+        }
+
+        .purpose-highlight {
+            background: #eff6f0;
+            border-left: 6px solid #2b7a62;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+            border-radius: 20px;
+            font-weight: 500;
+            color: #145c4b;
+            font-size: 1.04rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        /* 列表样式 (教材清单) */
+        .book-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 1.2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .book-list li {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 0.6rem 1rem;
+            transition: all 0.2s;
+            border: 1px solid #e5edf2;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .book-list li:hover {
+            background: #fefef9;
+            border-color: #cbdde6;
+            transform: translateX(4px);
+        }
+
+        .book-icon {
+            font-size: 1.25rem;
+            margin-right: 0.3rem;
+        }
+
+        .book-list a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1a6e62;
+            border-bottom: 1px dashed #bdd4cf;
+            transition: all 0.2s;
+        }
+
+        .book-list a:hover {
+            color: #0f4e44;
+            border-bottom-style: solid;
+            border-bottom-color: #2b7a62;
+        }
+
+        .plain-text {
+            color: #2c3e4e;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* 联系方式网格 */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.8rem;
+            background: #f8fafc;
+            padding: 1.5rem 1.8rem;
+            border-radius: 28px;
+            border: 1px solid #e6edf2;
+        }
+
+        .contact-item {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.98rem;
+            background: white;
+            padding: 0.65rem 1rem;
+            border-radius: 60px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            border: 1px solid #e2edf2;
+        }
+
+        .contact-icon {
+            font-size: 1.25rem;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #2c6a5e;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+            color: #1e4e45;
+        }
+
+        .wechat-text {
+            background: #ecf7f2;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #266b58;
+        }
+
+        hr {
+            margin: 2rem 0 1rem;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #d4e2e8, transparent);
+        }
+
+        footer {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 2rem;
+            color: #7f8f9c;
+            border-top: 1px solid #e9f0f3;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 650px) {
+            .content {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+            .contact-grid {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1.2rem;
+            }
+            .contact-item {
+                width: 100%;
+            }
+            .book-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        a {
+            word-break: break-word;
+        }
+        .badge-link {
+            background: #eef2f7;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: normal;
+            margin-left: 0.5rem;
+            color: #4f6f8f;
+        }
+    </style>
 </head>
 <body>
-    <h2>This is my first page</h2>
-    <script src="main.js"></script>
+<div class="container">
+    <div class="content">
+        <h1>📖 NewConceptCLL</h1>
+        <div class="subhead">探索K12语文的改革 · 系统性构建语文知识谱系</div>
+
+        <!-- ========= 目的章节 ========= -->
+        <h2>🎯 目的</h2>
+        
+        <div class="insight-block">
+            <p>📌 黄琼（2013）指出，当前语文教育面临语文体系建构不足、教材知识呈现不清、考纲与课标南辕北辙、教师忽略知识教学等问题。</p>
+        </div>
+        <div class="insight-block">
+            <p>📌 陈奕奕（2020）指出，语文教材是文选型教材，课文本身不承载知识，而语文课程却依赖课文的顺序，导致学生难以建立语文知识体系。</p>
+        </div>
+        <div class="insight-block">
+            <p>📌 宋时雨（2022）指出，语文教材术语大多分布在学习提示、学习任务当中，且没有体系化地介绍。</p>
+        </div>
+        <div class="insight-block">
+            <p>📊 知乎用户<strong>勇敢的小火花</strong>统计发现，若将高中各科的重要性总和为750，则语文只有50，约为数学、英语的四分之一。</p>
+        </div>
+        <div class="insight-block">
+            <p>💬 知乎用户<strong>kwasglag</strong>认为，语文不是文学，却被文学把持着；它不适合考试，却被考试紧抓着。实际上，语文既没有实现“工具性”，也没有实现“人文性”。</p>
+        </div>
+        <div class="insight-block">
+            <p>💬 知乎用户<strong>叶修</strong>认为，语文课程和语文考试是脱节的。</p>
+        </div>
+
+        <div class="purpose-highlight">
+            ✨ 本人的目的便是探索建立一套克服以上问题的语文教材，就是<strong>新概念汉语言丛书</strong>。
+        </div>
+
+        <!-- ========= 内容章节 ========= -->
+        <h2>📚 内容</h2>
+        
+        <h3>🎓 高中部分</h3>
+        <ul class="book-list">
+            <li>
+                <span class="book-icon">📘</span>
+                <a href="./文档/通论一.pdf" target="_blank" rel="noopener noreferrer">通论第一册 现代汉语·古代汉语</a>
+                <span class="badge-link">PDF</span>
+            </li>
+            <li>
+                <span class="book-icon">📗</span>
+                <a href="./通论二.pdf" target="_blank" rel="noopener noreferrer">通论第二册 逻辑学·文章学</a>
+                <span class="badge-link">PDF</span>
+            </li>
+            <li>
+                <span class="book-icon">📖</span>
+                <span class="plain-text">文选第一册 历史的长河：文言文章专题研讨</span>
+            </li>
+            <li>
+                <span class="book-icon">📖</span>
+                <span class="plain-text">文选第二册 近世的斑驳：白话文章专题研讨</span>
+            </li>
+            <li>
+                <span class="book-icon">🌍</span>
+                <span class="plain-text">文选第三册 世间的缤纷：跨文化专题研讨</span>
+            </li>
+            <li>
+                <span class="book-icon">🚩</span>
+                <span class="plain-text">文选第四册 真理的旗帜：革命传统专题研讨</span>
+            </li>
+            <li>
+                <span class="book-icon">🧠</span>
+                <span class="plain-text">文选第五册 智慧的殿堂：跨学科专题研讨</span>
+            </li>
+            <li>
+                <span class="book-icon">📊</span>
+                <a href="./现行人教社教材文言单词.第三次修改.xlsx" target="_blank" rel="noopener noreferrer">文言词汇表</a>
+                <span class="badge-link">Excel</span>
+            </li>
+        </ul>
+
+        <h3>✨ 优质教材重排</h3>
+        <ul class="book-list">
+            <li>
+                <span class="book-icon">📑</span>
+                <a href="./文档/文章学概论.pdf" target="_blank" rel="noopener noreferrer">文章学概论</a>
+                <span class="badge-link">PDF</span>
+            </li>
+        </ul>
+
+        <!-- ========= 联系方式 ========= -->
+        <h2>📬 联系方式</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <a href="mailto:1458643298@qq.com">1458643298@qq.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">💬</span>
+                <span>QQ群：754493332</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📝</span>
+                <a href="https://www.wjx.cn/vm/YDCeADA.aspx#" target="_blank" rel="noopener noreferrer">问卷星 · 反馈通道</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">⚡</span>
+                <a href="https://afdian.com/a/OuyangLeon" target="_blank" rel="noopener noreferrer">爱发电 · 支持创作</a>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📱</span>
+                <span class="wechat-text">微信公众号：新概念汉语言丛书</span>
+            </div>
+        </div>
+
+        <hr />
+        <footer>
+            <p>📌 新概念汉语言丛书 — 致力重构语文知识底层逻辑，贯通工具性与人文性。所有资源仅供教学研究参考。</p>
+            <p style="margin-top: 0.6rem;">© 新概念汉语言研究 · 开放探讨与共建</p>
+        </footer>
+    </div>
+</div>
 </body>
 </html>
-alert('xxx')
-h2 {
-    color: black;
-}
